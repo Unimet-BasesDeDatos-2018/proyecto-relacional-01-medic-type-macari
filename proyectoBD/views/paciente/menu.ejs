@@ -1,0 +1,30 @@
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Menu Paciente</title>
+    <link rel="stylesheet" href="/styles/style.css">
+  </head>
+
+  <body>
+    <h1>Bienvenido <%=Paciente.nombre%> </h1>
+    <h4>En que te podemos ayudar?</h4>
+    <form class="cf">
+      <input type="submit" value="Revisar Historia" id="input-submit">
+      <input type="hidden" name="cedulaPaciente" value=<%=Paciente.cedulaPa%> >
+    </form>
+    <form class="cf" action="/Paciente/revisarDatos" method="post">
+      <input type="submit" value="Revisar Datos Personales" id="input-submit">
+      <input type="hidden" name="cedulaPaciente" value=<%=Paciente.cedulaPa%> >
+    </form>
+    <form class="cf">
+      <input type="submit" value="Eliminar Cuenta" id="delete">
+      <input type="hidden" name="cedulaPaciente" value=<%=Paciente.cedulaPa%> >
+    </form>
+    <form class="cf" action="/">
+      <input type="submit" value="Salir del Sistema" id="salir">
+    </form>
+  </body>
+
+
+</html>

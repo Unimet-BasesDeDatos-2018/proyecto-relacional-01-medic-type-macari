@@ -1,0 +1,71 @@
+<!-- Default home page -->
+<!DOCTYPE html>
+<html>
+    <head>
+         <style>
+            form {
+              
+              margin: 0 auto;
+              width: 100px;
+              
+              padding: 1em;
+              
+              border-radius: 1em;
+            }
+            form div + div {
+              margin-top: 1em;
+            }
+            button {
+              width:75px;
+              
+            }
+            label {
+                display: inline-block;
+                width: 180px;
+                text-align: right;
+            }
+            html {
+                min-height: 100%;
+            }
+            body {
+                background: linear-gradient(#13a6eb,#13a6eb); 
+            }
+
+            h3 {
+                background: #13a6eb;
+                color: black;
+                text-align: left;
+            }
+          </style>
+    </head>
+  <body>
+  <title> Informacion basica del paciente</title>
+  <h1 style="font:'Times New Roman'; color:#000000;font-size:30px;font-weight:bold;text-align:center;" >Aqui va el nombre <br>de nuestra p&aacutegina</h1>
+
+  
+      <br>
+      <br>
+      <br>
+        
+      <h1>Informacion del paciente</h1>
+
+         
+
+    <form action='mostrar informes' style="border:none;"  method="POST">
+    <h3><input type="hidden" name="id" value=<%=Paciente.id%>></h3>
+    <h3>Nombre: <textarea name="nombre"> <%=Paciente.nombre%></textarea></h3>
+    <hr>
+    <h3>Cedula:<input type="number"  name="cedula"  value=<%=Paciente.cedulaPa%>></h3>
+    <h3>Sexo:<input type="text" name="sexo" value=<%=Paciente.sexo%>></h3>
+    <h3>Fecha de nacimiento:<input type="string" name="fechaNacimiento" value=<%=Paciente.fechaNacimiento%>></h3> 
+    <h3>Tipo de sangre:<input type="text" name="tipoSangre" value=<%=Paciente.tipoSangre%>></h3>   
+    <input type="submit"value="mostrar informes del paciente">
+
+</form>
+
+    <form action='/ingresar-paciente/' style="border:none;">
+            <button >Back</button>
+    </form>                 
+        
+</body>
+</html>
