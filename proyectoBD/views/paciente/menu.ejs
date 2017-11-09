@@ -9,11 +9,11 @@
   <body>
     <h1>Bienvenido <%=Paciente.nombre%> </h1>
     <h4>En que te podemos ayudar?</h4>
-    <form class="cf" action="/Paciente/verInformes">
+    <form class="cf">
       <input type="submit" value="Revisar Historia" id="input-submit">
       <input type="hidden" name="cedulaPaciente" value=<%=Paciente.cedulaPa%> >
     </form>
-    <form class="cf" action="/Paciente/revisarDatos" method="post">
+    <form class="cf" action='/Paciente/revisarDatos' >
       <input type="submit" value="Revisar Datos Personales" id="input-submit">
       <input type="hidden" name="cedulaPaciente" value=<%=Paciente.cedulaPa%> >
     </form>

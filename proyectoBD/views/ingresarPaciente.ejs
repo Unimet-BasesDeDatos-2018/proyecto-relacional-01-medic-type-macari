@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <html>
+      <head>
+           <style>
+              form {
+                
+                margin: 0 auto;
+                width: 400px;
+                
+                padding: 1em;
+                border: 1px dotted #000000;
+                border-radius: 1em;
+              }
+              form div + div {
+                margin-top: 1em;
+              }
+              label {
+                  display: inline-block;
+                  width: 180px;
+                  text-align: right;
+              }
+              html {
+                  min-height: 100%;
+              }
+              body {
+                  background: linear-gradient(#13a6eb,#13a6eb); 
+              }
+              h2 {
+                  background: #13a6eb;
+                  color: black;
+                  text-align: center;
+              }
+            </style>
+      </head>
+    <body>
+    <title> Ingresar al sistema</title>
+    <h1 style="font:'Times New Roman'; color:#000000;font-size:30px;font-weight:bold;text-align:center;" >Medic <br>Type</h1>
+    
+        <br>
+        <br>
+        <br>
+  </body>
+      <form  action="/Paciente/mostrarPaciente" method="POST"> 
+        <h2>Buscar Paciente</h2>
+        <input type="number" placeholder="cedula" name="id">
+        <input type="submit" value="Buscar Paciente">
+      </form>
+  </body>
+</html>
+  

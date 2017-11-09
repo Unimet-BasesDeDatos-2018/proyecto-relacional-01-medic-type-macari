@@ -8,7 +8,7 @@
 module.exports = {
   autoCreatedAt: false,
   autoUpdatedAt: false,
-   connection: 'mysql',
+  connection: 'mysql',
   tableName : 'Informe',
 attributes:{
       id: {
@@ -32,7 +32,7 @@ attributes:{
       },
       fecha:  {
           type: 'DATE',
-          required: true,
+          //required: true,
           columnName: 'fecha'
       },
       emergencia:{

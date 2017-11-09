@@ -15,7 +15,8 @@ attributes:{
           type: 'INTEGER',
           columnName: 'idDoctor',
           primaryKey: true,
-          autoIncrement: true
+          autoIncrement: true,
+          required: true
       },    
       cedulaDoc:{
           type: 'INTEGER',

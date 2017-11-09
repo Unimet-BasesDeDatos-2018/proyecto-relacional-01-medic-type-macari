@@ -1,0 +1,39 @@
+<html>
+    <head>
+  
+      <meta charset="UTF-8">
+      <title>Menu Doctor</title>
+      <link rel="stylesheet" href="/styles/style.css">
+    </head>
+  
+    <body>
+      <h1>Bienvenido Dr. <%=Doctor.nombre%> </h1>
+      <h4>Seleccione la accion que desea realizar</h4>
+      <br>
+      <form class="cf" action="/Doctor/verHistoriaPaciente" method="post">
+        <h5>Buscar la historia de un paciente</h5>
+        <input type='text' name="cedulaPaciente" placeholder='Cedula del Paciente' id="input-name">
+        <input type="submit" value="Buscar Historia" id="input-submit">
+      </form>
+      <br>
+      <form class="cf" action="/Doctor/verMedicamentos" method="post">
+          <h5>Buscar medicamentos segun su compuesto compuestoActivo</h5>
+        <input type='text' name="compuestoActivo" placeholder='Compuesto activo' id="input-name">
+        <input type="submit" value="Buscar Medicamentos" id="input-submit">
+      </form>
+      <br>
+      <form class="cf" action="" method="post">
+            <input type="submit" value="Revisar Datos Personales" id="input-submit">
+            <input type="hidden" name="cedulaDoctor" value=<%=%> >
+      </form>
+      <form class="cf">
+        <input type="submit" value="Eliminar Cuenta" id="delete">
+        <input type="hidden" name="cedulaPaciente" value=<%=Paciente.cedulaPa%> >
+      </form>
+      <form class="cf" action="/">
+        <input type="submit" value="Salir del Sistema" id="salir">
+      </form>
+    </body>
+  
+  
+  </html>

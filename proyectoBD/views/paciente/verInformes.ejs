@@ -6,9 +6,9 @@
     </head>
       
     <body>
-      <h1>Le damos la bienvenida a nuestro sistema</h1>
-      <h4>Por favor ingrese sus datos</h4>
-      <form class="cf" action="/Paciente/actualizar" method="post">
+      <h1>Historias medicas del Paciente</h1>
+      <h4></h4>
+      <form class="cf">
         <% historia.forEach(function(historia){%>
         <h5>Numero de informe: <%=historia.informe%> </h5>
         <h5>Paciente atendido: <%=historia.paciente%>></h5>

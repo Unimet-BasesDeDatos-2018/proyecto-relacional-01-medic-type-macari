@@ -1,0 +1,33 @@
+<html>
+        <head>  
+            <meta charset="UTF-8">
+            <title>Menu Paciente</title>
+            <link rel="stylesheet" href="/styles/style.css">
+        </head>
+          
+        <body>
+          <h1>Historias medicas del paciente</h1>
+          <h4></h4>
+          <form class="cf">
+            <% historia.forEach(function(historia){%>
+            <h5>Numero de informe: <%=historia.informe%> </h5>
+            <h5>Paciente atendido: <%=historia.paciente%></h5>
+            <h5>Medico tratante: <%=historia.doctor%></h5>
+            <h5>Fecha del informe:<%=historia.fecha%> </h5>
+            <% if(historia.emergencia===1){ %>
+                <p style="color:red">Entrada por emergencia</p>
+            <%}%>
+            <h5>Sintomas presentados: <%=historia.sintomas%></h5>
+            <h5>Diagnostico: <%=historia.enfermedad%> </h5>
+            <h5>Tratamiento: <%=historia.tratamiento%> </h5>
+            <p>Notas: <%=historia.notas%> </p>
+            <br>
+            <br>
+            <%});%>
+          </form>
+          <form class="cf" action="/">
+            <input type="submit" value="volver a pagina inicial" id="cancelar">
+          </form>
+        </body>
+    
+    </html>    
