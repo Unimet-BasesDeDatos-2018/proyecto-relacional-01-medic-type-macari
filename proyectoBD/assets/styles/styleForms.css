@@ -25,6 +25,17 @@ h4 {
   text-shadow: 1px 1px 0 white;
 }
 
+h5 {
+  text-align: center;
+  color: black;
+  text-shadow: 1px 1px 0 white;
+}
+
+p {
+  text-align: center;
+  text-shadow: 1px 1px 0 white;
+}
+
 form {
   max-width: 600px;
   text-align: center;

@@ -6,6 +6,8 @@
  */
 
 module.exports = {
-	
+	traerInformesPaciente: function(req,res,next){
+        Informe.query
+    }
 };
 

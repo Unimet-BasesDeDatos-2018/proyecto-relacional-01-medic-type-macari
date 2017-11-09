@@ -25,7 +25,7 @@ attributes:{
       },
       nombre: 'STRING',
       sexo: 'STRING',
-      fechaNacimiento: 'date',
+      fechaNacimiento: 'DATE',
       tipoSangre: 'STRING'
   }
 };

@@ -15,18 +15,47 @@ attributes:{
         type: 'INTEGER',
         columnName: 'idInforme',
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
+        required: true
+
       },
-      cedulaDoctor:{
+      idDoctor:{
         type:'INTEGER',
-        columnName: 'doctorTratante'
+        columnName: 'doctorTratante',
+        required: true
       },
 
-      cedulaPaciente:{
+      idPaciente:{
           type: 'INTEGER',
-          columnName: 'cedulaPaciente'
+          columnName: 'pacienteAtendido',
+          required: true
       },
-      tratamiento: 'STRING'
+      fecha:  {
+          type: 'DATE',
+          required: true,
+          columnName: 'fecha'
+      },
+      emergencia:{
+        type: 'BOOLEAN',
+        required: true,
+        columnName: 'emergencia'
+      },
+      sintomas:{
+        type: 'TEXT',
+        columnName: 'sintomas'
+      },
+      diagnostico: {
+        type: 'INTEGER',
+        columnName: 'diagnostico'
+      },
+      tratamiento: {
+        type: 'TEXT',
+        columnName: 'tratamiento'
+      },
+      notas: {
+        type: 'TEXT',
+        columnName: 'tratamiento'
+      }
   }
 };
 
