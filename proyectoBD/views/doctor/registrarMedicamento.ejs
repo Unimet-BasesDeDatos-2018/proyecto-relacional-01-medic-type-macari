@@ -1,0 +1,30 @@
+<html>
+    <head>
+  
+      <meta charset="UTF-8">
+      <title></title>
+      <link rel="stylesheet" href="/styles/style.css">
+    </head>
+  
+    <body>
+      <h1>Sistema de Registro de Medicamentos</h1>
+      
+      <form class="cf" action="/Doctor/medicamentoConCompuesto" method="post">
+        <h4> Si el compuesto activo de su medicamento ya existe en el Sistema</h4>        
+            <h5>Seleccione el compuesto activo del medicamento</h5>
+            <select name="compuestoActivo">
+                <% compuesto.forEach(function(compuesto){%>
+                    <option value=<%=compuesto.idCompuestoActivo%> > <%=compuesto.nombre%> </option>
+                <%})%>
+            </select>
+            <input type="text" name="nombreMedicamento" placeholder="Medicamento" id="input-name">
+            <input type="text" name="efectosSecundarios" placeholder="Efectos Secundarios" id="input-name">
+            <input type="submit" value="Registrar Medicamento" id="input-submit">
+      </form>
+      <form class="cf" action="back">
+        <input type="submit" value="Cancelar" id="cancelar">
+      </form>
+    </body>
+  
+</html>
+  

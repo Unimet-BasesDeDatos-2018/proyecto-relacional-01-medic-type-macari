@@ -56,6 +56,43 @@ module.exports = {
 				compuesto:aux
 			})
 		})
+	},
+
+	registrarMedicamento: function(req,res){
+		var q = 'SELECT * from CompuestoActivo';
+		CompuestoActivo.query(q,function(err,comp){
+			if(err){
+				sails.log(err);
+				return;
+			}
+			var compuesto = JSON.parse(JSON.stringify(comp));
+			sails.log('compuestos');
+			sails.log(compuesto);
+			res.view({
+				compuesto:compuesto
+			})
+		})
+	},
+
+	medicamentoConCompuesto: function(req,res){
+		Medicamento.create(req.params.all()).exec(function(err,med){
+			if(err){
+				sails.log(err);
+			}
+			console.log(med);
+			res.redirect("/");
+		})
+	},
+
+	registrarCompuestoActivo: function(req,res){
+		CompuestoActivo.create(req.params.all()).exec(function(err,comp){
+			if(err){
+				sails.log(err);
+				return;
+			}
+			res.redirect("/");
+		})
 	}
+	
 };
 

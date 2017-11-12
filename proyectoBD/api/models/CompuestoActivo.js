@@ -15,8 +15,7 @@ module.exports = {
       type: 'INTEGER',
       columnName: 'idCompuestoActivo',
       primaryKey: true,
-      autoIncrement: true,
-      required: true
+      autoIncrement: true
     },
     nombre: {
       type: 'string',

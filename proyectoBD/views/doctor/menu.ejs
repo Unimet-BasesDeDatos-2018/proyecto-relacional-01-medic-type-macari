@@ -21,11 +21,13 @@
         <input type='text' name="compuestoActivo" placeholder='Compuesto activo' id="input-name">
         <input type="submit" value="Buscar Medicamentos" id="input-submit">
       </form>
-      <br>
-      <form class="cf" action="" method="post">
-            <input type="submit" value="Revisar Datos Personales" id="input-submit">
-            <input type="hidden" name="cedulaDoctor" value=<%=%> >
+      <form class="cf" action="/Doctor/registrarMedicamento" method="post">
+            <input type="submit" value="Registrar un medicamento" id="input-submit">
       </form>
+      <form class="cf" action="/Doctor/registrarCompuestoActivo" method="post">
+        <input type="text" name="nombre" placeholder="Nombre del compuesto activo" id="input-name">
+        <input type="submit" value="Registrar un compuesto activo" id="input-submit">
+  </form>
       <form class="cf">
         <input type="submit" value="Eliminar Cuenta" id="delete">
         <input type="hidden" name="cedulaPaciente" value=<%=Paciente.cedulaPa%> >

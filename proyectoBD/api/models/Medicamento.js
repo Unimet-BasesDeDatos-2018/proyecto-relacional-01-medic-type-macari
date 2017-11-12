@@ -15,12 +15,11 @@ module.exports = {
         type: 'INTEGER',
         columnName: 'idMedicamento',
         primaryKey: true,
-        autoIncrement: true,
-        required: true
+        autoIncrement: true
       },
       nombreMedicamento: {
         type: 'string',
-        columnName: 'nomber',
+        columnName: 'nombre',
         required: true
       },
       compuestoActivo: {

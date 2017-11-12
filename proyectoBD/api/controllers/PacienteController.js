@@ -42,7 +42,7 @@ module.exports = {
 				console.log(err);
 			}
 			console.log(paciente);
-			//window.alert("Usted ha sido registrado exitpsamente");
+
 			res.redirect("/");
 		})
 	},
@@ -52,19 +52,25 @@ module.exports = {
 			if(err){
 				sails.log(err);
 			}
+			var fechaFormateada = sails.moment(Paciente.fechaNacimiento).format("YYYY-MM-DD");
+			var jsonFecha = JSON.parse(JSON.stringify(fechaFormateada));
+			sails.log(jsonFecha);
+			console.log(jsonFecha);
 			res.view({
-				Paciente:Paciente
+				Paciente:Paciente,
+				Fecha: jsonFecha
 			});
 		})
 	},
 
 	actualizar: function(req,res){
-		var cedula = req.param('cedulaPa');
-		sails.log('cedula '+cedula);
+		var fechaFormateada = sails.moment(req.param('fechaNacimiento')).format('YYYY-MM-DD');
+		sails.log('fecha de nacimiento');
+		sails.log(fechaFormateada)
 		Paciente.update({cedulaPa:req.param('cedulaPa')},
 		{nombre:req.param('nombre'),
 		 sexo:req.param('sexo'),
-		 //fechaNacimiento:req.param('fechaNacimiento'),
+		 fechaNacimiento:fechaFormateada,
 		 tipoSangre:req.param('tipoSangre')
 		}).exec(function(err,Paciente){
 			if(err){
