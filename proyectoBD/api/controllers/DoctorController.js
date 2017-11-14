@@ -20,7 +20,7 @@ module.exports = {
     }, 
 
     verHistoriaPaciente:  function(req,res){
-		var q = 'select all Informe.idInforme as informe, Paciente.nombre as paciente, Doctor.nombre as doctor, Informe.fecha as fecha, Informe.emergencia as emergencia, Informe.sintomas as sintomas, Enfermedad.Nombre as enfermedad, Informe.tratamiento as tratamiento, Informe.notas as notas from Paciente  inner join Informe on Paciente.idPaciente=Informe.pacienteAtendido left JOIN Informe_has_Medicamento on Informe.idInforme=Informe_has_Medicamento.Informe_idInforme left join Medicamento on Medicamento.idMedicamento= Informe_has_Medicamento.Medicamento_idMedicamento inner join Enfermedad on Informe.diagnostico=Enfermedad.idEnfermedad inner join Doctor on Informe.doctorTratante=Doctor.idDoctor where cedulaPaciente=?';
+		var q = 'select all informe.idInforme as informe, paciente.nombre as paciente, doctor.nombre as doctor, informe.fecha as fecha, informe.emergencia as emergencia, informe.sintomas as sintomas, enfermedad.Nombre as enfermedad, informe.tratamiento as tratamiento from paciente inner join informe on paciente.idPaciente=informe.pacienteAtendido left JOIN informe_has_medicamento on informe.idInforme=informe_has_medicamento.Informe_idInforme left join medicamento on medicamento.idMedicamento= informe_has_medicamento.Medicamento_idMedicamento inner join enfermedad on informe.diagnostico=enfermedad.idEnfermedad inner join doctor on informe.doctorTratante=doctor.idDoctor where paciente.cedulaPaciente=?';
 		var inf = Paciente.query(q,[req.param('cedulaPaciente')],function(errr,historia){
 			if (errr){
 				sails.log(errr);
@@ -39,7 +39,7 @@ module.exports = {
 	verMedicamentos:	function(req,res){
 		sails.log('req');	
 		sails.log(req.param('compuestoActivo'));
-		var q = "select Medicamento.nombre as medicamento, CompuestoActivo.nombre as compuestoActivo from CompuestoActivo inner join Medicamento on Medicamento.compuestoActivo=CompuestoActivo.idCompuestoActivo where CompuestoActivo.nombre='"+req.param('compuestoActivo')+"'";
+		var q = "select medicamento.nombre as medicamento, compuestoactivo.nombre as compuestoActivo, medicamento.efectosSecundarios as efectosSecundarios  from compuestoactivo inner join medicamento on medicamento.compuestoActivo=compuestoactivo.idCompuestoActivo where compuestoactivo.nombre='"+req.param('compuestoActivo')+"'";
 		var inf = CompuestoActivo.query(q,function(errr,medicamento){
 			if(errr){
 				sails.log(errr);
@@ -59,7 +59,7 @@ module.exports = {
 	},
 
 	registrarMedicamento: function(req,res){
-		var q = 'SELECT * from CompuestoActivo';
+		var q = 'SELECT * from compuestoactivo';
 		CompuestoActivo.query(q,function(err,comp){
 			if(err){
 				sails.log(err);

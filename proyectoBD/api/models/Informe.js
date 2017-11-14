@@ -9,7 +9,7 @@ module.exports = {
   autoCreatedAt: false,
   autoUpdatedAt: false,
   connection: 'mysql',
-  tableName : 'Informe',
+  tableName : 'informe',
 attributes:{
       id: {
         type: 'INTEGER',
