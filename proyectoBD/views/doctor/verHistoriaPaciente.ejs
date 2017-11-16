@@ -1,33 +1,72 @@
 <html>
-        <head>  
-            <meta charset="UTF-8">
-            <title>Menu Paciente</title>
-            <link rel="stylesheet" href="/styles/style.css">
-        </head>
-          
-        <body>
-          <h1>Historias medicas del paciente</h1>
-          <h4></h4>
-          <form class="cf">
-            <% historia.forEach(function(historia){%>
-            <% if(historia.emergencia===1){ %>
-              <p style="color:red">Entrada por emergencia</p>
-            <%}%>
-            <h5>Numero de informe: <%=historia.informe%> </h5>
-            <h5>Paciente atendido: <%=historia.paciente%></h5>
-            <h5>Medico tratante: <%=historia.doctor%></h5>
-            <h5>Fecha del informe:<%=historia.fecha%> </h5>
-            
-            <h5>Sintomas presentados: <%=historia.sintomas%></h5>
-            <h5>Diagnostico: <%=historia.enfermedad%> </h5>
-            <h5>Tratamiento: <%=historia.tratamiento%> </h5>
-            <br>
-            <br>
-            <%});%>
-          </form>
-          <form class="cf" action="/">
-            <input type="submit" value="volver a pagina inicial" id="cancelar">
-          </form>
-        </body>
+  <head>  
+      <meta charset="UTF-8">
+      <title></title>
+      <link rel="stylesheet" href="/styles/style.css">
+  </head>
     
-    </html>    
+  <body>
+    <h1>Historias medicas del Paciente</h1>
+    <h4></h4>
+    <form class="cf">
+      
+      <h4 style="color:royalblue">CONDICIONES DEL PACIENTE</h4>
+      <% condicion.forEach(function(condicion){ %>
+        <h5> <%=condicion.nombre%> </h5>
+      <% }) %>
+
+      <h4 style="color:royalblue">INTERVENCIONES DEL PACIENTE</h4>
+      <% intervenciones.forEach(function(intervenciones){ %>
+        <h5> <%=intervenciones.intervencion%> </h5>
+      <% }) %>
+
+      <h4 style="color:royalblue">INFORMES DEL PACIENTE</h4>
+      <% historia.forEach(function(historia){%>
+      <% if(historia.emergencia===1){ %>
+          <p style="color:red">Entrada por emergencia</p>
+      <%}%>
+      <h5>Numero de informe: <%=historia.informe %> </h5>
+      <h5>Paciente atendido: <%=historia.paciente %> </h5>
+      <h5>Medico tratante: <%=historia.doctor%></h5>
+      <h5>Fecha del informe:<%=historia.fecha%> </h5>
+      <h5>Sintomas presentados: <%=historia.sintomas%></h5>
+      <h5>Diagnostico: <%=historia.enfermedad%> </h5>
+      <h5>Tratamiento: <%=historia.tratamiento%> </h5>
+      <h5>Medicamento: <%=historia.medicamento%> </h5>
+      <h5>Dosis: <%=historia.dosis%>  </h5>
+      <!-- Cirujano-->
+      <% if(historia.especialidad===1){ %>
+        <h5 style="color:royalblue">SECCION DEL CIRUJANO </h5>
+        <h5>Diagnostico preoperatorio: <%=historia.diagnosticoPreO%> </h5>
+        <h5>Examenes preoperatorios: <%=historia.examenesPreO%> </h5>
+        <h5>Motivo de la Operacion: <%-historia.motivoOp%> </h5>
+      <% } %>
+      <!-- Pediatra -->
+      <% if(historia.especialidad===2){ %>
+        <h5 style="color:royalblue">SECCION DEL PEDIATRA</h5>
+        <h5>Aspectos intelectuales: <%=historia.intelectuales %></h5>
+        <h5>Aspectos motores: <%=historia.motores %></h5>
+        <h5>Aspectos emocionales: <%=historia.emocionales %></h5>
+      <% } %>
+      <!-- Dermatologo -->
+      <% if(historia.especialidad===3){ %>
+        <h5 style="color:royalblue">SECCION DEL DERMATOLOGO</h5>
+        <h5>Diagnostico primario de la piel: <%=historia.diagPrim%> </h5>
+        <h5>Examen fisico: <%=historia.examFisico %></h5>
+      <% } %>
+      <!-- Cardiologo -->
+      <% if(historia.especialidad===4){ %>
+        <h5 style="color:royalblue">SECCION DEL CARDIOLOGO</h5>
+        <h5>Frecuencia cardiaca media: <%=historia.frecCardiaca%> </h5>
+        <h5>Tension arterial: <%=historia.tension%> </h5>
+      <% } %>
+      <br>
+      <br>
+      <%});%>
+    </form>
+    <form class="cf" action="/">
+      <input type="submit" value="volver a pagina inicial" id="cancelar">
+    </form>
+  </body>
+
+</html>    

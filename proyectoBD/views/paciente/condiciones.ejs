@@ -1,0 +1,38 @@
+<html>
+    <head>  
+        <meta charset="UTF-8">
+        <title>Menu Paciente</title>
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+      
+    <body>
+      <h1>Historias medicas del Paciente</h1>
+      <h4></h4>
+      <form class="cf">
+        <% condiciones.forEach(function(condiciones){%>
+            <% var a = false %>
+            <% padece.forEach(function(padece){%>
+                <% if(condiciones.id===padece.id){ %>
+                    <% a = true%>
+                <% } %>
+                <% if(a){ %>
+                    <input type="checkbox" name=<%=condiciones.nombre%> value=<%=condiciones.id %> checked> <%=condiciones.nombre%>
+                <% } %>
+            <% }) %>
+            
+            <% if(!a){ %>
+                <input type="checkbox" name=<%=condiciones.nombre%> value=<%=condiciones.id %> > <%=condiciones.nombre%>
+            <%}%>
+
+        <%})%>
+        <input type="submit" value="Actualizar (fuera de servicio)" id="input-submit">
+      </form>
+      <form class="cf" action="/">
+        <input type="submit" value="Volver a pagina inicial" id="cancelar">
+      </form>
+    </body>
+
+</html>    
+
+
+

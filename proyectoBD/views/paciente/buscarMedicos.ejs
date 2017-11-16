@@ -1,17 +1,18 @@
 <html>
     <head>  
         <meta charset="UTF-8">
-        <title></title>
+        <title>Menu Paciente</title>
         <link rel="stylesheet" href="/styles/style.css">
     </head>
       
     <body>
-      <h1>Medicamentos con el mismo compuesto activo</h1>
+      <h1>Doctores</h1>
       <h4></h4>
-      <form class="cf" >
-        <% medicina.forEach(function(medicina){%>
-        <h5>Nombre medicamento: <%=medicina.medicamento%> </h5>
-        <h5>Efectos secundarios: <%=medicina.efectosSecundarios%></h5>
+      <form class="cf">
+        <% doctor.forEach(function(doctor){%>
+        <h5>Nombre del Doctor: <%=doctor.nombre%> </h5>
+        <h5>Cedula del Doctor: <%=doctor.cedula%></h5>
+        <br>
         <br>
         <%});%>
       </form>

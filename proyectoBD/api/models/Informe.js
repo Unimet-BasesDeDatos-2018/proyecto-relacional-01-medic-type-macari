@@ -15,9 +15,7 @@ attributes:{
         type: 'INTEGER',
         columnName: 'idInforme',
         primaryKey: true,
-        autoIncrement: true,
-        required: true
-
+        autoIncrement: true
       },
       idDoctor:{
         type:'INTEGER',

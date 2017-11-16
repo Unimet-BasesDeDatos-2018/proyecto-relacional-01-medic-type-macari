@@ -6,11 +6,12 @@
     </head>
       
     <body>
-      <h1>Medicamentos con el mismo compuesto activo</h1>
+      <h1>Medicamentos que no poseen el compuesto activo especificado</h1>
       <h4></h4>
-      <form class="cf" >
+      <form class="cf">
         <% medicina.forEach(function(medicina){%>
         <h5>Nombre medicamento: <%=medicina.medicamento%> </h5>
+        <h5>Compuesto activo: <%=medicina.compuesto%></h5>
         <h5>Efectos secundarios: <%=medicina.efectosSecundarios%></h5>
         <br>
         <%});%>

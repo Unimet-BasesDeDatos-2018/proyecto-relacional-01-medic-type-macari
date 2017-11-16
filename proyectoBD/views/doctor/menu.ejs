@@ -7,7 +7,7 @@
     </head>
   
     <body>
-      <h1>Bienvenido Dr. <%=Doctor.nombre%> </h1>
+      <h1>Bienvenido Dr.<%=Doctor.nombre%> </h1>
       <h4>Seleccione la accion que desea realizar</h4>
       <br>
       <form class="cf" action="/Doctor/verHistoriaPaciente" method="post">
@@ -16,11 +16,21 @@
         <input type="submit" value="Buscar Historia" id="input-submit">
       </form>
       <br>
+      <form class="cf" action="/Doctor/nuevoInforme" method="post">
+        <input type='hidden' name="cedulaDoc" value=<%=Doctor.cedulaDoc%> id="input-name">
+        <input type="submit" value="Hacer un nuevo informe" id="input-submit">
+      </form>
+      <br>
       <form class="cf" action="/Doctor/verMedicamentos" method="post">
           <h5>Buscar medicamentos segun su compuesto compuestoActivo</h5>
         <input type='text' name="compuestoActivo" placeholder='Compuesto activo' id="input-name">
         <input type="submit" value="Buscar Medicamentos" id="input-submit">
       </form>
+      <form class="cf" action="/Doctor/evitarCompuesto" method="post">
+        <h5>Buscar medicamentos sin dado compuesto activo</h5>
+      <input type='text' name="compuestoActivo" placeholder='Compuesto activo' id="input-name">
+      <input type="submit" value="Buscar Medicamentos" id="input-submit">
+    </form>
       <form class="cf" action="/Doctor/registrarMedicamento" method="post">
             <input type="submit" value="Registrar un medicamento" id="input-submit">
       </form>

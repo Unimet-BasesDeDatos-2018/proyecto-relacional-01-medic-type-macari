@@ -1,0 +1,35 @@
+<html>
+    <head>  
+        <meta charset="UTF-8">
+        <title>Menu Paciente</title>
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+      
+    <body>
+      <h1>Historias medicas del Paciente</h1>
+      <h4></h4>
+      <form class="cf">
+        <% intervenciones.forEach(function(intervenciones){%>
+            <% var a = false %>
+            <% intervenido.forEach(function(intervenido){%>
+                <% if(intervenciones.id===intervenido.id){ %>
+                    <% a = true%>
+                <% } %>
+                <% if(a){ %>
+                    <input type="checkbox" name=<%=intervenciones.nombre%> value=<%=intervenciones.id %> checked> <%=intervenciones.nombre%>
+                <% } %>
+            <% }) %>
+            
+            <% if(!a){ %>
+                <input type="checkbox" name=<%=intervenciones.nombre%> value=<%=intervenciones.id %> > <%=intervenciones.nombre%>
+            <%}%>
+
+        <%})%>
+        <input type="submit" value="Actualizar (fuera de servicio)" id="input-submit">
+      </form>
+      <form class="cf" action="/">
+        <input type="submit" value="Volver a pagina inicial" id="cancelar">
+      </form>
+    </body>
+
+</html>    

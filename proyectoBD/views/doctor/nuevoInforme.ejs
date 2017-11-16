@@ -1,0 +1,73 @@
+<html>
+    <head>
+  
+      <meta charset="UTF-8">
+      <title></title>
+      <link rel="stylesheet" href="/styles/style.css">
+    </head>
+  
+    <body>
+      <h1>Nuevo informe</h1>
+      <h4>Por favor ingrese los datos</h4>
+      <form class="cf" action="/Doctor/informeCreado" method="post">
+        <input type="hidden" name="idDoctor" value=<%=Doctor[0].idDoctor%> id="input-name">
+        <input type="hidden" name="especialidad" value=<%=Doctor[0].especialidad%> id="input-name">
+        <input type="number" name="cedulaPa" placeholder='cedula del paciente' id="input-name">
+        <input type="checkbox" name="emergencia" value=1 > emergencia
+        <input type="text" name="sintomas" placeholder='sintomas' id="input-name">
+        
+        <h5>Enfermedad diagnosticada:</h5>
+        <select name='enfermedad'>
+            <% Enfermedad.forEach(function(Enfermedad){%>
+                <option value=<%=Enfermedad.idEnfermedad%>><%=Enfermedad.nombreEnfermedad %></option>
+            <%})%>
+        </select>
+        <br>
+        <input type="text" name="tratamiento" placeholder="tratamiento" id="input-name">
+        <h5>Medicamento recetado:</h5>
+        <select name='medicamento'>
+            <% Medicamento.forEach(function(Medicamento){%>
+                <option value=<%=Medicamento.idMedicamento%>><%=Medicamento.nombreMedicamento %></option>
+            <%})%>
+        </select>
+        <br>
+        <input type="number" name="dosis" placeholder="dosis en mg" id="input-name">
+
+        <!–– Cirujano ––>
+        <% if( Doctor[0].especialidad===1){ %>
+          <h5 style="color:royalblue">SECCION DEL CIRUJANO </h5>
+          <input type="text" name="examenesPreOperatorio" placeholder="Examenes preoperatorios" id="input-name">
+          <input type="text" name="diagnosticoPreOperatorio" placeholder="Diagnostico preoperatorios" id="input-name">
+          <input type="text" name="motivoOperacion" placeholder="Motivo de la operacion" id="input-name">
+        <% } %>
+        <!–– Pediatra ––>
+        <% if( Doctor[0].especialidad===2){ %>
+          <h5 style="color:royalblue">SECCION DEL PEDIATRA</h5>
+          <input type="text" name="colegio" placeholder="Colegio de joven" id="input-name">
+          <input type="text" name="aspectosIntelectuales" placeholder="Aspectos intelectuales" id="input-name">
+          <input type="text" name="aspectosDesarrolloMotor" placeholder="Aspectos de desarrollo motores" id="input-name">
+          <input type="text" name="aspectosEmocionales" placeholder="Aspectos emocionales" id="input-name">
+        <% } %>
+        <!–– Dermatologo ––>
+        <% if( Doctor[0].especialidad===3){ %>
+          <h5 style="color:royalblue">SECCION DEL DERMATOLOGO</h5>
+          <input type="text" name="diagnosticoPrimario" placeholder="Diagnostico primario de la piel" id="input-name">
+          <input type="text" name="examenFisico" placeholder="Examen fisico" id="input-name">
+        <% } %>
+        <!–– Cardiologo ––>
+        <% if( Doctor[0].especialidad===4){ %>
+          <h5 style="color:royalblue">SECCION DEL CARDIOLOGO</h5>
+          <input type="number" name="frecuenciaCardiaca" placeholder="Frecuencia cardiaca" id="input-name">
+          <input type="number" name="tension" placeholder="Tension arterial" id="input-name">
+        <% } %>
+
+        <br>
+
+        <input type="submit" value="Crear informe" id="input-submit">
+      </form>
+      <form class="cf" action="/">
+        <input type="submit" value="Cancelar" id="cancelar">
+      </form>
+    </body>
+  
+  </html>

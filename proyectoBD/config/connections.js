@@ -36,10 +36,11 @@ module.exports.connections = {
   
   mysql: {
     adapter: 'sails-mysql',
-    host: 'localhost',
-    user: 'root',
-    password: 'nicoleHlourido1710',
-    database: 'medic_type'
+    host: 'kavfu5f7pido12mr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'jkodtt7nmklnfact',
+    password: 'glflp7gv5h9uwhav',
+    port: '3306',
+    database: 'gil83w5lwl7xcz1l'
   },
   
 

@@ -8,23 +8,35 @@
 module.exports = {
   autoCreatedAt: false,
   autoUpdatedAt: false,
-   connection: 'mysql',
+  connection: 'mysql',
   tableName : 'doctor',
 attributes:{
       id: {
           type: 'INTEGER',
           columnName: 'idDoctor',
           primaryKey: true,
-          autoIncrement: true,
-          required: true
+          autoIncrement: true
       },    
       cedulaDoc:{
           type: 'INTEGER',
           columnName: 'cedulaDoctor'
       },
-      nombre: 'STRING',
-      sexo: 'STRING',
-      fechaNacimiento: 'DATE'
+      nombre: {
+          type:'STRING',
+          columnName: 'nombre'
+      },
+      sexo: {
+          type: 'STRING',
+          columnName: 'sexo'  
+      },
+      fechaNacimiento: {
+          type: 'DATE',
+          columnName: 'fechaNacimiento'
+      },
+      especialidad: {
+          type: 'INTEGER',
+          columnName: 'especialidad'
+      }
   }
 };
 

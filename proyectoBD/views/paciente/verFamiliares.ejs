@@ -1,0 +1,29 @@
+<html>
+    <head>  
+        <meta charset="UTF-8">
+        <title>Menu Paciente</title>
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+      
+    <body>
+      <h1>Historias medicas del Paciente</h1>
+      <h4></h4>
+      
+        <% familiar.forEach(function(familiar){%>
+    <form class="cf" action="/Paciente/eliminarFamiliar" method="post">
+        <h5>Nombre del familiar: <%=familiar.nombreFamiliar%> </h5>
+        <h5>Parentezco: <%=familiar.parentezco%></h5>
+        <input type="hidden" name="id" value=<%=familiar.idFamiliar%>>
+        <input type="submit" value="Eliminar familiar" id="input-submit">
+        <br>
+        <br>
+    </form>
+        <%});%>
+        
+      
+      <form class="cf" action="/">
+        <input type="submit" value="volver a pagina inicial" id="cancelar">
+      </form>
+    </body>
+
+</html>   
